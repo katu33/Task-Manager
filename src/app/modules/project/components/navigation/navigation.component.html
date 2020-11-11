@@ -1,0 +1,22 @@
+<div class="nav">
+    <div class="nav__header">
+
+        <a [routerLink]="['/']"><img id="nav__header-logo" src="https://jobchat.vn/img/new-logo.a6ecd21b.svg" alt="logo"></a>
+        
+        <div class="btn-menu">
+            <button mat-icon-button><mat-icon>menu</mat-icon></button>    
+        </div>
+
+    </div>
+
+    <div class="nav__links">
+        <button mat-button [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+            true}"><mat-icon>home</mat-icon> <span>Trang chủ</span></button>
+        <button mat-button><mat-icon>work</mat-icon> <span>My Job</span></button>
+        <button mat-button><mat-icon>chat_bubble_outline</mat-icon> <span>My chat</span></button>
+    </div>
+
+    <app-nav-actions></app-nav-actions>
+
+    <app-nav-project></app-nav-project>
+</div>

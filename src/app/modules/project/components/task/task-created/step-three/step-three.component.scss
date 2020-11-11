@@ -1,0 +1,56 @@
+.review {
+    .step {
+        .title {
+            color: #141523;
+            margin-bottom: 5px;
+        }
+        
+        .step-title {
+            font-weight: bold;
+            color: #000;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #141523;
+            font-weight: bold;
+            margin-bottom: 0!important;
+        }
+
+        ul {
+            display: flex;
+            li {
+                &:not(:first-child) {
+                    margin-left: -14px;
+                }
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    border: 2px solid #fff;
+                }
+            }
+        }
+
+        .file {
+            display: flex;
+            align-items: center;
+            margin-right: 18px;
+
+            img {
+                width: 50px;
+                margin-right: 10px;
+            }
+
+            .infor-title {
+                font-weight: 600;
+                color: #000;
+            }
+        }
+
+    }
+    
+}
+
+

@@ -1,0 +1,24 @@
+<div class="nav__project">
+    <tab-group>
+        <tab-panel title="Nhóm">
+            <ul>
+                <li *ngFor="let item of listProject" [routerLink]="['/group/'+ item._id]" routerLinkActive="router-link-active">
+                    <img [src]="item.avatar" alt="avatar">
+                    <h5>{{item.title}}</h5>
+                </li>
+            </ul>       
+        </tab-panel>
+
+        <tab-panel title="Bạn bè">
+            <ul>
+                <li *ngFor="let item of listFriend" [routerLink]="['/chat/'+ item._id]">
+                    <img [src]="item.avatar" alt="avatar">
+                    <div class="infor">
+                        <h5>{{item.fullname}}</h5>
+                        <p>{{item.txt}}</p>
+                    </div>
+                </li>
+            </ul>  
+        </tab-panel>
+    </tab-group>
+</div>

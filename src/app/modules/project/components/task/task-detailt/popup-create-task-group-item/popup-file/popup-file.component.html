@@ -1,0 +1,24 @@
+<div class="popup-file">
+    <div class="popup-file-head">
+        <mat-icon>folder_open</mat-icon> <span>Download</span>
+        <button mat-icon-button (click)="onClosePopup()"><mat-icon>close</mat-icon></button>
+    </div>
+    <div class="popup-file-body" fileDrop (filesDropped) = "selectFile($event)">
+        <ng-container *ngIf="!files;else haveFiles">
+            <mat-icon>attach_file</mat-icon> <span>Click or drop file to here</span>
+        </ng-container>
+        
+        <ng-template #haveFiles>
+            <div class="view-img" *ngFor="let file of files">
+                <img [src]="file.base64" alt="">
+            </div>
+        </ng-template>
+    </div>
+    <div class="popup-file-footer">
+        <p>Upload allows up to 5 files. Maximum 50 MB per file.</p>
+        <div class="actions" *ngIf="files">
+            <button class="btn-primary" mat-button (click)="onAccept()">Accept</button>
+            <button class="btn-danger" mat-button (click)="onRemoveAll()">Remove All</button>
+        </div>
+    </div>
+</div>

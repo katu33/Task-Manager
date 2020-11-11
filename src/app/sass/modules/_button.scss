@@ -1,0 +1,58 @@
+.btn {
+    padding: 0 17px;
+    border-radius: 2px;
+    border: 1px solid;
+    &-blue {
+      background-color: #3c4ddb;
+      color: #fff;
+    }
+}
+
+.not-start {
+  color: #fa6322;
+
+  &.active {
+    background-color: #fa6322;
+    color: #fff;
+  }
+}
+
+.in-process {
+  color: #fabd22;
+  
+  &.active {
+    background-color: #fabd22;
+    color: #fff;
+  }
+}
+
+.finish {
+  color: #5ac08f;
+  
+  &.active {
+    background-color: #5ac08f;
+    color: #fff;
+  }
+}
+
+.paused {
+  color: #30323d;
+  
+  &.active {
+    background-color: #30323d;
+    color: #fff;
+  }
+}
+
+.btn-primary {
+  background-color: #3c4ddb;
+  border: 1px solid #3c4ddb;
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border: 1px solid #dc3545;
+  color: #fff;
+}
+

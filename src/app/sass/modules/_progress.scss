@@ -1,0 +1,42 @@
+.progress {
+    position: relative;
+    &.active:after {
+        position: absolute;
+        left: 41%;
+        top: 50%;
+        content: "";
+        width: 3px;
+        height: 9px;
+        border-right: 2px solid $green;
+        border-bottom: 2px solid $green;
+        border-left: 2px solid transparent;
+        border-top: 2px solid transparent;
+        transform: rotate(45deg) translate(-50%, -50%);
+    }
+
+    svg {
+        width: 32px;
+        height: 32px;
+        position: relative;
+
+        circle {
+            stroke-width: 2px;
+            fill: none;
+            width: 32px;
+            height: 32px;
+            transform: translate(1px,1px);
+        
+            &:first-child {
+                stroke: #ccc;
+                stroke-dasharray: 0;
+                stroke-dashoffset: 94;
+            }
+            
+            &:nth-child(2) {
+                stroke: $yellow;
+                stroke-dasharray: 94;
+                stroke-dashoffset: calc(94 - (94 * 80)/ 100);
+            }
+        }  
+    }
+}

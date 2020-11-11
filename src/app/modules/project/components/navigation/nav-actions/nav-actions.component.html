@@ -1,0 +1,8 @@
+<div class="nav__actions" [ngClass]="{'active': isInputSearch}">
+    <span class="nav__actions-title">My Workspace</span>
+    <div class="nav__actions-search">
+        <mat-icon (click) = "onInputSearchMyWork()">search</mat-icon>
+        <input type="text" class="nav__actions-search">
+    </div>
+    <span class="nav__actions-cancel" (click) = "onInputSearchMyWork()">Hủy</span>
+</div>

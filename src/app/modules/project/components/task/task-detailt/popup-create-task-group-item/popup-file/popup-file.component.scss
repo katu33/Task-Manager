@@ -1,0 +1,56 @@
+.popup-file {
+    width: 613px;
+    position: relative;
+
+    .popup-file-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        border: 1px dashed #ccc;
+        margin: 9px 0;
+
+        .view-img img {
+            width: 100px;
+            height: 70px;
+            margin: 0 10px;
+        }
+    }
+    
+    .popup-file-footer {
+        text-align: center;
+
+        .actions {
+            button {
+                margin: 0 5px;
+            }
+        }
+    }
+}
+
+.popup-file-head {
+    display: flex;
+    align-items: center;
+
+    > mat-icon.mat-icon {
+        margin-right: 5px;
+        color: #a09f9f;
+    }
+    
+    > span {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    button.mat-focus-indicator.mat-icon-button.mat-button-base {
+        position: absolute;
+        right: -12px;
+        top: -13px;
+    }
+}
+
+::ng-deep {
+    .mat-dialog-container {
+        padding: 17px;
+    }
+}

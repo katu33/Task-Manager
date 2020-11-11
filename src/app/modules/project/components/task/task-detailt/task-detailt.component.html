@@ -1,0 +1,205 @@
+<div class="content">
+    <div class="project" *ngIf="task">
+        <div class="project__infor">
+            <div class="project__infor-box status">
+                <div class="box-title">Status</div>
+                <div class="infor">
+                    <span>{{task.status}}</span>
+                </div>
+            </div>
+    
+            <div class="project__infor-box user">
+                <div class="box-title">Created by</div>
+                <div class="infor">
+                    <img src="https://picsum.photos/200/306.webp" alt="">
+                    andrew baki
+                </div>
+            </div>
+    
+            <div class="project__infor-box date">
+                <div class="box-title">Deadline</div>
+                <div class="infor">
+                    <span>Feb 14</span>
+                </div>
+                <div class="process"></div>
+            </div>
+        </div>
+    
+        <div class="project__subTasks">
+            <div class="project__subTasks-title">
+                <h3 class="title">Group Task</h3>
+                <button mat-button (click)="onCreateGroup()"><mat-icon>add</mat-icon>Create Group</button>
+            </div>
+    
+            <div class="project__subTasks-content">
+                <app-task-sub-group></app-task-sub-group>
+            </div>
+        </div>
+    
+        <div class="project__detailt">
+            <h3 class="title">Task Details</h3>
+            
+            <div class="desc">
+                <div class="desc-title">Task description</div>
+    
+                <div class="desc-content">
+                    {{task.desc}}
+                </div>
+            </div>
+    
+            <div class="attachs">
+                <div class="attachs-title">
+                    Files Attached <a href="">Download All</a>
+                </div>
+                <div class="attachs-file">
+                    <div class="file">
+                        <img src="https://picsum.photos/200/306.webp" alt="">
+                        <div class="file-infor">
+                            <h5>image.png</h5>
+                            <p>36,8 Kb</p>
+                        </div>
+                    </div>
+
+                    <div class="file">
+                        <img src="https://picsum.photos/200/307.webp" alt="">
+                        <div class="file-infor">
+                            <h5>image_2.png</h5>
+                            <p>36,8 Kb</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="attachs-actions">
+                    Show All (40) <mat-icon>keyboard_arrow_down</mat-icon>
+                </a>
+            </div>
+    
+            <div class="management">
+                <h3 class="title">Management</h3>
+    
+            <div class="assigned">
+                <div class="assigned-title">Assigned to</div>
+                    <div class="assigned-user">
+                        <div class="user" *ngFor="let user of task.management">
+                            <img [src]="user.avatar" alt="">
+                            {{user.username}}
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="notes">
+                    <div class="notes-title">Notes and Comments</div>
+                    <ul class="notes-content">
+                        <li *ngFor="let note of task.notes">{{note}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>  
+    </div>
+
+    <div class="chat" #chat>
+        <h2 class="chat-title">Thảo luận</h2>
+        <div class="chat-search">
+            <input type="text" placeholder="Viết bình luận...">
+        </div>
+        <div class="chat-content">
+            <div class="box">
+                <div class="box-infor">
+                    <img src="https://picsum.photos/200/305.webp" alt="">
+                    <span class="infor-name">Dania gigby</span>
+                    <span class="infor-date">2 days ago</span>
+                </div>
+
+                <div class="box-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia adipisci consequatur rerum at rem pariatur officiis. Officiis omnis facere harum laudantium id animi optio at dolorem, delectus quaerat explicabo. Beatae.
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-infor">
+                    <img src="https://picsum.photos/200/306.webp" alt="">
+                    <span class="infor-name">Hanna</span>
+                    <span class="infor-date">2 days ago</span>
+                </div>
+
+                <div class="box-txt">
+                    Lorem ipsum rerum at rem pariatur officiis. Officiis omnis facere harum laudantium id animi optio at dolorem, delectus quaerat explicabo. Beatae.
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-infor">
+                    <img src="https://picsum.photos/200/304.webp" alt="">
+                    <span class="infor-name">Dania gigby</span>
+                    <span class="infor-date">2 days ago</span>
+                </div>
+
+                <div class="box-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia adipisci consequatur rerum at rem pariatur officiis. Officiis omnis facere harum laudantium id animi optio at dolorem, delectus quaerat explicabo. Beatae.
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-infor">
+                    <img src="https://picsum.photos/200/302.webp" alt="">
+                    <span class="infor-name">Dania gigby</span>
+                    <span class="infor-date">2 days ago</span>
+                </div>
+
+                <div class="box-txt">
+                    Lorem isci consequatur rerum at rem pariatur officiis. Officiis omnis facere harum laudantium id animi optio at dolorem, delectus quaerat explicabo. Beatae.
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-infor">
+                    <img src="https://picsum.photos/200/301.webp" alt="">
+                    <span class="infor-name">Dania gigby</span>
+                    <span class="infor-date">2 days ago</span>
+                </div>
+
+                <div class="box-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia adipisci consequatur rerum at rem pariatur officiis. Officiis omnis facere harum laudantium id animi optio at dolorem, delectus quaerat explicabo. Beatae.
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-infor">
+                    <img src="https://picsum.photos/200/309.webp" alt="">
+                    <span class="infor-name">Dania gigby</span>
+                    <span class="infor-date">2 days ago</span>
+                </div>
+
+                <div class="box-txt">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia adipisci consequatur rerum at rem pariatur officiis. Officiis omnis facere harum laudantium id animi optio at dolorem, delectus quaerat explicabo. Beatae.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #content> 
+    <div class="modal-head">
+        <div class="title">Task group</div>
+        <button mat-icon-button><mat-icon>close</mat-icon></button>
+    </div>
+
+    <div class="modal-body">
+        <input type="text" placeholder="Title task group ...">
+        <div class="row">
+            <div class="user">
+                <button type="button" mat-button>Perform</button>
+                <div class="icon"><mat-icon>person_search</mat-icon></div>
+            </div>
+
+            <div class="user">
+                <button type="button" mat-button>Follow</button>
+                <div class="icon"><mat-icon>person_search</mat-icon></div>
+            </div>
+        </div>
+        <textarea  placeholder="Description ..." cols="30" rows="10"></textarea>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" mat-button>Add New Task Group</button>
+    </div>
+</ng-template>

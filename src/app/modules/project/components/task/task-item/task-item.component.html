@@ -1,0 +1,23 @@
+<ng-container *ngIf="task">
+    <div class="task-status" innerHTML="{{task.status | colorStatus}}"></div>
+    <h3 class="task-title">{{task.title}}</h3>
+    <div class="task-infor">
+        <div class="left">
+            <span class="task-infor-date">Apr 24</span>
+            <span class="task-infor-attach"><mat-icon>attach_file</mat-icon> 7</span>
+            <span class="task-infor-comment"><mat-icon>mode_comment</mat-icon>20</span>
+        </div>
+
+        <div class="right">
+            <ul *ngIf="task.management && task.management.length > 0">
+                <li *ngFor="let user of task.management"><img [src]="user.avatar" alt=""></li>
+            </ul>
+        </div>
+    </div>
+    <div class="task-action"><a [routerLink]="['/task/detailt/123123123']">View Subtasks (23) <mat-icon>keyboard_arrow_down</mat-icon></a></div>
+    <div class="task-process">
+    <div class="progress" [ngClass]="{'active' : task.percent === 100 && task.status === 'Done'}" style="height: 32px">
+            <app-progress-circle [cx]="15" [cy]="15" [r]="15" [percent] = "task.percent" [status]="task.status"></app-progress-circle>
+        </div>
+    </div>
+</ng-container>

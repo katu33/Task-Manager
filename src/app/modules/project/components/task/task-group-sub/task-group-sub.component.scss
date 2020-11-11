@@ -1,0 +1,96 @@
+@import './../../../../../sass/base/variables';
+
+.task-group {
+    color: $black;
+    width: 100%;
+    overflow-x: auto;
+
+    table {
+        width: 100%;
+        tr {
+            &:first-child td {
+                font-size: 12px;
+            }
+            td {
+                padding: 9px 6px;
+                border-bottom: 1px solid #dadff3;
+            }
+        }
+    }
+
+    .progress {
+        width: 30px;
+        height: 30px;
+    }
+
+    .team {
+        width: 105px;
+
+        ul {
+            li {
+                display: inline-block;
+    
+                &:not(:first-child) {
+                    margin-left: -14px;
+                }
+    
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+    
+    .title {
+        width: 270px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: $black-titl;
+        font-weight: 600;
+        font-size: 15px;
+    }
+
+    .status {
+        width: 105px;
+        text-align: left;
+        font-weight: 600;
+        position: relative;
+
+        ::ng-deep {
+            .color-green {
+                margin-left: 24px;
+            }
+
+            .color-green:after {
+                position: absolute;
+                left: 3px;
+                top: 26%;
+                content: "";
+                width: 3px;
+                height: 9px;
+                border-right: 2px solid $green;
+                border-bottom: 2px solid $green;
+                border-left: 2px solid transparent;
+                border-top: 2px solid transparent;
+                transform: rotate(45deg) translateY(-50%);
+            }
+        }
+    }
+
+    .subtasks {
+        color: $blue;
+        font-weight: 600;
+    }
+
+    .actions {
+        button {
+            font-weight: 600;
+        }
+    }
+}
+

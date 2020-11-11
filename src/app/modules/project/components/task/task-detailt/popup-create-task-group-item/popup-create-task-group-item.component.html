@@ -1,0 +1,85 @@
+<div class="popup" [ngClass]="{'zoom' : isZoom}"  [@EnterLeave]="'flyIn'">
+    <form [formGroup] = "formSubTask">
+        <div class="title">
+            <input type="text" placeholder="Nhập tên công việc..." formControlName="title">
+        </div>
+        <div class="name">Dự án: <span class="fs-weight-bold">{{taskDetailt.title}}</span></div>
+        <ul class="list">
+            <li>trang thái công việc : 
+                <div class="status-task">
+                    <span 
+                        *ngFor="let status of statusTask" 
+                        class="btn btn-status {{status.className}}" 
+                        [ngClass]="{'active': (status.title === getFieldFormValue('status'))}"
+                        (click)="selectStatus(status.title)"
+                    >{{status.title}}</span>
+                </div>
+            </li>
+        </ul>
+        <textarea cols="30" rows="5" placeholder="Thêm chi tiết cho công việc này ..." formControlName="desc"></textarea>
+        <ul class="actions">
+            <li><button mat-button (click)="toggleChoosePopup()"> <mat-icon>supervisor_account</mat-icon> Thực hiện</button></li>
+            <li><button mat-button (click)="openPopupFile()"> <mat-icon>content_copy</mat-icon>Tệp</button></li>
+            <li>
+                <mat-form-field appearance="fill" style="width: 0; overflow: hidden;">
+                    <input matInput [matDatepicker]="start">
+                    <mat-datepicker #start></mat-datepicker>
+                </mat-form-field>
+                <button mat-button (click)="start.open()"> <mat-icon>date_range</mat-icon>Bắt đầu</button>
+            </li>
+            <li>
+                <mat-form-field appearance="fill" style="width: 0; overflow: hidden;">
+                    <input matInput [matDatepicker]="deadline">
+                    <mat-datepicker #deadline></mat-datepicker>
+                </mat-form-field>
+                
+                <button mat-button (click)="deadline.open()"> <mat-icon>date_range</mat-icon>Kết thúc</button>
+            </li>
+        </ul>
+    
+        <div class="zoom-popup" (click)="zoomPopup()"><mat-icon>keyboard_arrow_left</mat-icon></div>
+    
+        <button type="button" mat-button id="create">Tạo công việc</button>
+        <button mat-icon-button id="close" (click)="closePopup()"><mat-icon>close</mat-icon></button>
+    </form>
+
+    <div class="choose-popup" *ngIf="isChoosePopup">
+        <button mat-icon-button id="choose-popup-close" (click)="toggleChoosePopup()"><mat-icon>close</mat-icon></button>
+
+        <div class="choose-popup-header">
+            <p class='title'>Appoint the performer</p>
+            <p class="desc">Responsible for assigned work</p>
+            <div class="search">
+                <input type="text" placeholder="Search...">
+                <mat-icon>search</mat-icon>
+            </div>
+        </div>
+
+        <div class="choose-popup-body">
+            <div class="user">
+                <img src="https://picsum.photos/200/300.webp" alt="" class="avatar">
+                <span class="name">Tuấn Anh</span>
+            </div>
+
+            <div class="user">
+                <img src="https://picsum.photos/200/301.webp" alt="" class="avatar">
+                <span class="name">Tuấn Anh</span>
+            </div>
+
+            <div class="user">
+                <img src="https://picsum.photos/200/302.webp" alt="" class="avatar">
+                <span class="name">Tuấn Anh</span>
+            </div>
+
+            <div class="user">
+                <img src="https://picsum.photos/200/303.webp" alt="" class="avatar">
+                <span class="name">Tuấn Anh</span>
+            </div>
+
+            <div class="user">
+                <img src="https://picsum.photos/200/304.webp" alt="" class="avatar">
+                <span class="name">Tuấn Anh</span>
+            </div>
+        </div>
+    </div>
+</div>

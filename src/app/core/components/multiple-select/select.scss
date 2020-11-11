@@ -1,0 +1,100 @@
+
+
+.select {
+    position: relative;
+
+    .user {
+        display: flex;
+        align-items: center;
+        background-color: #3c4ddb;
+        padding: 5px;
+        color: #fff;
+        
+        img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+
+        span {
+            margin: 0 8px;
+        }
+
+        mat-icon.mat-icon {
+            cursor: pointer;
+        }
+    }
+
+    .select-head {
+        position: relative;
+
+        .select-search {
+            min-height: 40px;
+            border: 1px solid #d0d8ee;
+            border-radius: 2px;
+            padding: 5px 5px 0 5px;
+
+            .select-search-item {
+                margin-bottom: 5px;
+                &:not(:last-child) {
+                    margin-right: 5px;
+                }
+            }
+        }
+    
+        mat-icon.mat-icon.icon-down {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .select-search {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    }
+
+    .select-option {
+        position: absolute;
+        z-index: 4;
+        left: 0;
+        right: 0;
+        background: #fff;
+        box-shadow: 1px 4px 18px rgba(0,0,0,0.3);
+        max-height: 300px;
+        overflow-y: auto;
+        
+        input[type="text"] {
+            /* margin-bottom: 5px; */
+            margin: 10px;
+            width: calc(100% - 20px);
+            padding: 12px 15px;
+        }
+    
+        .item.ng-star-inserted {
+            padding: 12px 14px;
+            color: rgba(0,0,0,.85);
+            font-weight: 600;
+            background-color: #fff;
+
+            &.active {
+                background-color: #e6f7ff!important;
+            }
+
+            &:hover {
+                background-color: #e8e8e8;
+                cursor: pointer;
+            }
+        }
+
+        mat-icon.mat-icon.notranslate.done.material-icons.mat-icon-no-color.ng-star-inserted {
+            position: absolute;
+            right: 10px;
+            color: #3eb67d;
+        }
+    }
+}
+
+

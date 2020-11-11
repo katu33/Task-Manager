@@ -1,0 +1,36 @@
+<div class="modal">
+    <div class="bg" (click)="closeModal()"></div>
+    <div class="task__created" [@EnterLeave]="'flyIn'">
+        <h2 class="task__craeted-title">Create a New Task</h2>
+        <button 
+            type="button" 
+            id="close" 
+            mat-icon-button
+            (click)="closeModal()"
+        >
+        <mat-icon>close</mat-icon></button>
+
+        <div class="task__created-step">
+            <ul>
+                <li class="step" *ngFor="let step of stepForm; let i = index" [ngClass]="{'active': stepCurrent === i}">
+                    <span class="step-number">{{i + 1}}</span>
+                    <span class="step-title">{{step}}</span>
+                </li>
+            </ul>
+        </div>
+    
+        <div class="task__created-form">
+            <app-step-one 
+                (onProceed) = "nextStep()"
+                *ngIf="stepCurrent === 0"
+            ></app-step-one>
+
+            <app-step-two 
+                (onProceed) = "nextStep()"
+                *ngIf="stepCurrent === 1"
+            ></app-step-two>
+
+            <app-step-three *ngIf="stepCurrent === 2"></app-step-three>
+        </div>
+    </div>
+</div>

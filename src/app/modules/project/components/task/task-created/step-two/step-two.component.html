@@ -1,0 +1,41 @@
+<form [formGroup] = "formStepTwo">
+    <div class="form-group">
+        <div class="title">Giao cho</div>
+        <kp-select (users) = "getUsers($event)">
+            <kp-option *ngFor="let user of users" [data] = "user"></kp-option>
+        </kp-select>
+        <!-- <mat-form-field appearance="fill">
+            <mat-select multiple formControlName="management">
+                <mat-option value="topping">123123123</mat-option>
+                <mat-option value="toppi1ng">123123123</mat-option>
+                <mat-option value="toppin2g">123123123</mat-option>
+                <mat-option value="toppi3ng">123123123</mat-option>
+                <mat-option value="toppineg">123123123</mat-option>
+            </mat-select>
+        </mat-form-field> -->
+    </div>
+
+    <div class="form-group">
+        <div class="title">Trạng thái</div>
+        <div class="status">
+            <div 
+                class="box {{status.class}}" 
+                *ngFor="let status of taskStatus; let i = index" 
+                [ngClass]="{'active': i === currentTaskStatus}"
+                (click) = "selectTaskStatus(i)"
+            >
+                {{status.title}}
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="">Ghi chú và bình luận</label>
+        <textarea name="" id="" cols="30" rows="10" formControlName="notes"></textarea>
+    </div>
+
+    <div class="form-actions">
+        <button type="button" mat-button (click)="onClose()">Hủy</button>
+        <button type="button" mat-button (click)="handleProceed()">Tiến hành</button>
+    </div>
+</form>

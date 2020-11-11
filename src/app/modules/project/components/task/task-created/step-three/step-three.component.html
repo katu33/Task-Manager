@@ -1,0 +1,67 @@
+<div class="review" *ngIf="task">
+    <div class="step">
+        <div class="step-title">Bước 1</div>
+        <div class="step-content">
+            <div class="row d-flex justify-spacebeewen">
+                <div class="col-6">
+                    <div class="title">Tiêu đề</div>
+                    <p>{{task.title}}</p>
+                </div>
+
+                <div class="col-6">
+                    <div class="title">Hạn chót</div>
+                    <p>{{task.end_at_txt}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="title">Mô tả công việc</div>
+                <p>{{task.desc}}</p>
+            </div>
+
+            <div class="row">
+                <div class="title">Tệp đính kèm</div>
+                <div class="row d-flex">
+                    <div class="file" *ngFor="let item of fileBase64$ | async">
+                        <img [src]="item.base64" alt="">
+                        <div class="file-infor">
+                            <div class="infor-title">{{item.file.name}}</div>
+                            <p>36,9 KB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="step-title">Bước 2</div>
+        <div class="step-content">
+            <div class="row d-flex justify-spacebeewen">
+                <div class="col-6">
+                    <div class="title">Quản lý</div>
+                    <ul>
+                        <li *ngFor="let user of task.management"><img [src]="user.avatar" alt=""></li>
+                    </ul>
+                </div>
+
+                <div class="col-6">
+                    <div class="title">Trạng thái</div>
+                    <p>{{task.status}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="title">Ghi chú</div>
+                <p>{{task.notes}}</p>
+            </div>
+
+           
+        </div>
+    </div>
+
+    <div class="actions">
+        <button type="button" mat-button>Hủy</button>
+        <button type="button" class="btn btn-blue" mat-button (click)="createTask()">Tạo công việc</button>
+    </div>
+</div>

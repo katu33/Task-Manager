@@ -1,0 +1,66 @@
+.nav {
+    
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 20px 10px 20px;
+
+        img#nav__header-logo {
+            width: 150px;
+        }
+
+        .mat-icon-button {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+
+            i, .mat-icon {
+                line-height: 35px;
+            }
+    
+            .mat-icon {
+                height: 35px;
+                width: 35px;
+                color: #777676;
+            }
+    
+            .material-icons {
+                font-size: 35px;
+            }
+        }
+    }
+
+    .nav__links {
+        button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif!important;
+            &.active {
+                color: #3c4ddb;
+                font-weight: bold;
+            }
+            ::ng-deep {
+                span.mat-button-wrapper {
+                    display: flex;
+                    align-items: center;
+
+                    span {
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            mat-icon.mat-icon.notranslate.material-icons.mat-icon-no-color {
+                margin-right: 12px;
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+

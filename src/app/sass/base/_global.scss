@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body { 
+  background-color: #ececec;
+  color: #7b85a1;
+  font-family: 'Montserrat', sans-serif!important;
+}
+body { 
+  margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+  outline: none;
+}
+
+input, button, textarea {
+    outline: none;
+}
+
+.d-none {
+    display: none;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-spacebeewen {
+    justify-content: space-between;
+}
+
+.col-6 {
+    width: calc(50% - 20px);
+}
+
+.row {
+    margin-bottom: 32px;
+}
+
+.color-green {
+    color: $green!important;
+}
+  
+.color-yellow {
+    color: $yellow!important;
+}
+
+.color-blue {
+    color: $blue!important;
+}
+
+.color-orange {
+    color: $orange!important;
+}
+  
+.color-black {
+    color: $black!important;
+}
+
+.fs-weight-bold {
+    font-weight: bold;
+}

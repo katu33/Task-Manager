@@ -1,0 +1,20 @@
+- change detection : 
+    + before : khi có sự thay đổi trong component thì change detection đi ngược lên root component , 
+               nó sẽ gọi thằng ApplicationRef.tick() chạy change detection all component
+    + onpush : cũng sẽ đi ngược lên component root , nhưng khác với before thì khi nó tick nếu mà ko có input or event nào thay đổi thì 
+               ko chạy change detection 
+
+- Data binding: cho phép đồng bộ dữ liệu giữa model và view
+     - two-way binding: model thay đổi view cũng thay đổi , ngược lại
+     - binding: model thay đổi view thay đổi
+
+- Dom:
+    - shadow dom: 
+        + mang sự đóng gói cho html element. 
+        + sử dụng shadow dom thì các style đc giới hạn trong phạm vi element tránh xung đột với nodes khác của dom
+    - View Encapsulation : 
+
+- Subject: là 1 type observable , phát giá trị cho nhiều thằng cùng 1 lúc
+
+- javascriprt: 
+    -engine : gồm 2 thành , memory heap và call stack

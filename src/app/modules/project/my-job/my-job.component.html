@@ -1,0 +1,94 @@
+<div class="job__bar">
+    <div class="bar-top">
+        <div class="nav">
+            <a href="">Tasks</a>
+            <a href="">Files</a>
+            <a href="">Notes</a>
+            <a href="">Actity</a>
+        </div>
+
+        <div class="infor">
+            <div class="infor-team">
+                Team 
+                <ul>
+                    <li><img src="https://picsum.photos/200/300.webp" alt=""></li>
+                    <li><img src="https://picsum.photos/200/301.webp" alt=""></li>
+                    <li><img src="https://picsum.photos/200/302.webp" alt=""></li>
+                    <li><img src="https://picsum.photos/200/303.webp" alt=""></li>
+                    <li><img src="https://picsum.photos/200/304.webp" alt=""></li>
+                </ul>
+            </div>
+            <div class="infor-change-manager">
+                <button mat-button class="name">Manage Team <mat-icon>published_with_changes</mat-icon></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="job__actions">
+    <ul>
+        <li>
+            Status
+            <mat-form-field>
+                <mat-select name="status" value="any">
+                    <mat-option value="any">Any</mat-option>
+                    <mat-option value="any12e12e21e">Any12e12e12e</mat-option>
+                    <mat-option value="any12d12d">Any12e12e12e</mat-option>
+                    <mat-option value="any">Any</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+        <li>
+            Status
+            <mat-form-field>
+                <mat-select name="status" value="any">
+                    <mat-option value="any">Any</mat-option>
+                    <mat-option value="any12e12e21e">Any12e12e12e</mat-option>
+                    <mat-option value="any12d12d">Any12e12e12e</mat-option>
+                    <mat-option value="any">Any</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+        <li>
+            Status
+            <mat-form-field>
+                <mat-select name="status" value="any">
+                    <mat-option value="any">Any</mat-option>
+                    <mat-option value="any12e12e21e">Any12e12e12e</mat-option>
+                    <mat-option value="any12d12d">Any12e12e12e</mat-option>
+                    <mat-option value="any">Any</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+        <li>
+            Status
+            <mat-form-field>
+                <mat-select name="status" value="any">
+                    <mat-option value="any">Any</mat-option>
+                    <mat-option value="any12e12e21e">Any12e12e12e</mat-option>
+                    <mat-option value="any12d12d">Any12e12e12e</mat-option>
+                    <mat-option value="any">Any</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+        <li>
+            Status
+            <mat-form-field>
+                <mat-select name="status" value="any">
+                    <mat-option value="any">Any</mat-option>
+                    <mat-option value="any12e12e21e">Any12e12e12e</mat-option>
+                    <mat-option value="any12d12d">Any12e12e12e</mat-option>
+                    <mat-option value="any">Any</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+    </ul>
+
+    <button mat-button (click)="openForm()"><mat-icon>add</mat-icon> Create Task</button>
+</div>
+
+<div class="job__content">
+    <app-task-group></app-task-group>
+</div>
+
+<ng-template #modal></ng-template>

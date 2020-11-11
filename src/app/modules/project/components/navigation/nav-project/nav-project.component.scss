@@ -1,0 +1,66 @@
+@import './../../../../../sass/base/variables';
+
+.nav__project {
+    ::ng-deep {
+        ul.tab-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 18px;
+            margin-bottom: 10px;
+        
+            li {
+                background: #fff;
+                padding: 5px 10px;
+                width: calc(50% - 10px);
+                border-radius: 98px;
+                cursor: pointer;
+                text-align: center;
+
+                &.active {
+                    color: #fff;
+                    background-color: $blue;
+                }
+            }
+        }
+        
+        .tab-body {
+            li {
+                display: flex;
+                align-items: center;
+                padding: 7px 31px;
+                cursor: pointer;
+                border-radius: 4px;
+                margin: 4px;
+                outline: none;
+                color: #22313f;
+                font-family: 'Montserrat', sans-serif!important;
+                
+                &:hover {
+                    background: #d4dbef;
+                }
+        
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+        
+                h5 {
+                    margin: 0;
+                    font-size: 14px;
+                    font-weight: 500;
+                    font-family: 'Montserrat', sans-serif!important;
+                }
+        
+                p {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    margin-bottom: 0;
+                }
+            }
+        }        
+    }
+}

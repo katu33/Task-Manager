@@ -1,0 +1,12 @@
+Viewcontainer quản lý viewref
+
+ApplicationRef : 
+- why: khi muốn attach view vào 1 vị trí bất kì ở dom ko phải chịu sự quản lý của VCR nào,
+
+
+Step create modal : content : templateRef
+    1. Tạo viewRef : content.createEmbeddedView
+    2. Tạo cpnFactory : resolveComponentFactory
+    3. dùng cpnFactory để tạo componentRef (truyền viewref node khi muốn appen view vào ng content)
+    4. sau đó attach componentRef vào ApplicationRef
+    5. append vào dom

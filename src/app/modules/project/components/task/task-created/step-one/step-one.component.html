@@ -1,0 +1,53 @@
+<form [formGroup] = "formStepOne">
+    <div class="form-group">
+        <label for="">Title</label>
+        <input type="text" formControlName="title">
+    </div>
+
+    <div class="form-group">
+        <label for="">Task Details</label>
+        <input type="text" formControlName="desc">
+    </div>
+
+    <div class="form-groups">
+        <div class="form-group">
+            <label for="">Start Date (Optional)</label>
+            <mat-form-field appearance="fill">
+                <input matInput [matDatepicker]="picker" (click)="picker.open()" placeholder="_ _ /_ _ /_ _"  formControlName="create_at"/>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group" appearance="fill">
+            <label for="">Deadline Date (Optional)</label>
+            <mat-form-field appearance="fill">
+                <input matInput [matDatepicker]="deadline" (click)="deadline.open()" placeholder="_ _ /_ _ /_ _"  formControlName="end_at"/>
+                <mat-datepicker #deadline></mat-datepicker>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="title">Attached files</div>
+        <div class="drop-file" fileDrop (filesDropped) = "selectFileDrop($event)">
+            <mat-icon>cloud_upload</mat-icon>
+            <div class="ntf">Drop files here or click to select</div>
+            <p>Up to 1 Mb</p>
+        </div>
+        <div class="view-file">
+            <div class="view-file-box" *ngFor="let item of fileUploadBase64">
+                <img [src]="item.base64" alt="">
+                <div class="file-infor">
+                    <div class="file-name">{{item.file.name}}</div>
+                    <div class="file-dl">36,8 KB</div>
+                </div>    
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <button type="button" mat-button (click)="handleClose()">Cancel</button>
+        <button type="button" mat-button (click)="handleProceed()">Proceed</button>
+    </div>
+</form>

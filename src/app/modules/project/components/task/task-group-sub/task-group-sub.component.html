@@ -1,0 +1,43 @@
+<div class="task-group">
+    <table>
+        <tr>
+            <td *ngFor="let item of taskTitle">{{item}}</td>
+        </tr>
+        <tr *ngFor="let item of taskGroup">
+            <td>
+                <div class="progress" [ngClass]="{'active' : item.percent === 100 && item.status === 'Done'}">
+                    <app-progress-circle [cx]="15" [cy]="15" [r]="15" [percent] = "item.percent" [status]="item.status"></app-progress-circle>
+                </div>
+            </td>
+            <td>
+                <div class="title">{{item.title}}</div>
+            </td>
+            <td>
+                <div class="team">
+                    <ul>
+                        <li *ngFor="let user of item.users"><img [src]="user.avatar" alt=""></li>
+                    </ul>
+                </div>
+            </td>
+            <td>
+                <div class="status" innerHTML="{{item.status | colorStatus}}"></div>
+            </td>
+            <td><div class="date">Apr 24</div></td>
+            <td><div class="files">8</div></td>
+            <td><div class="messages">400</div></td>
+            <td><div class="subtasks">23</div></td>
+            <td>
+                <div class="actions">
+                    <button mat-icon-button class="color-blue" (click)="onOpen(item)"> <mat-icon>add</mat-icon></button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <mat-paginator 
+        [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[8, 10, 25, 100]"
+        (page)="selectPage($event)"
+    >
+    </mat-paginator>
+</div>

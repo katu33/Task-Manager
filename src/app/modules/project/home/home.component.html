@@ -1,0 +1,118 @@
+<div class="home__bar">
+    <div class="bar-top">
+        <div class="nav">
+            <a href="">Tasks</a>
+            <a href="">Files</a>
+            <a href="">Notes</a>
+            <a href="">Actity</a>
+        </div>
+
+        <div class="infor">
+            <div class="infor-team">
+                Team 
+                <ul>
+                    <li><img src="https://picsum.photos/200/300.webp" alt=""></li>
+                    <li><img src="https://picsum.photos/200/301.webp" alt=""></li>
+                    <li><img src="https://picsum.photos/200/302.webp" alt=""></li>
+                    <li><img src="https://picsum.photos/200/303.webp" alt=""></li>
+                    <li><img src="https://picsum.photos/200/304.webp" alt=""></li>
+                </ul>
+            </div>
+            <div class="infor-change-manager">
+                <button mat-button class="name">Manage Team <mat-icon>published_with_changes</mat-icon></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="home__actions">
+    <ul>
+        <li>
+            Status
+            <mat-form-field>
+                <mat-select name="status" value="any">
+                    <mat-option value="any">Any</mat-option>
+                    <mat-option value="any12e12e21e">Any12e12e12e</mat-option>
+                    <mat-option value="any12d12d">Any12e12e12e</mat-option>
+                    <mat-option value="any">Any</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+        <li>
+            Status
+            <mat-form-field>
+                <mat-select name="status" value="any">
+                    <mat-option value="any">Any</mat-option>
+                    <mat-option value="any12e12e21e">Any12e12e12e</mat-option>
+                    <mat-option value="any12d12d">Any12e12e12e</mat-option>
+                    <mat-option value="any">Any</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+        <li>
+            Status
+            <mat-form-field>
+                <mat-select name="status" value="any">
+                    <mat-option value="any">Any</mat-option>
+                    <mat-option value="any12e12e21e">Any12e12e12e</mat-option>
+                    <mat-option value="any12d12d">Any12e12e12e</mat-option>
+                    <mat-option value="any">Any</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+        <li>
+            Status
+            <mat-form-field>
+                <mat-select name="status" value="any">
+                    <mat-option value="any">Any</mat-option>
+                    <mat-option value="any12e12e21e">Any12e12e12e</mat-option>
+                    <mat-option value="any12d12d">Any12e12e12e</mat-option>
+                    <mat-option value="any">Any</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+        <li>
+            Status
+            <mat-form-field>
+                <mat-select name="status" value="any">
+                    <mat-option value="any">Any</mat-option>
+                    <mat-option value="any12e12e21e">Any12e12e12e</mat-option>
+                    <mat-option value="any12d12d">Any12e12e12e</mat-option>
+                    <mat-option value="any">Any</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </li>
+    </ul>
+
+    <button mat-button (click)="openForm()"><mat-icon>add</mat-icon> Create Task</button>
+</div>
+
+<div class="home__content">
+    <div class="tasks">
+        <div class="task" *ngFor="let task of tasks; let i = index">
+            <div class="task-status" innerHTML="{{task.status | colorStatus}}"></div>
+            <h3 class="task-title">{{task.title}}</h3>
+            <div class="task-infor">
+                <div class="left">
+                    <span class="task-infor-date">Apr 24</span>
+                    <span class="task-infor-attach"><mat-icon>attach_file</mat-icon> 7</span>
+                    <span class="task-infor-comment"><mat-icon>mode_comment</mat-icon>20</span>
+                </div>
+
+                <div class="right">
+                    <ul>
+                        <li *ngFor="let user of task.management"><img [src]="user.avatar" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="task-action"><a [routerLink]="['/task/detailt/123123123']">View Subtasks (23) <mat-icon>keyboard_arrow_down</mat-icon></a></div>
+            <div class="task-process">
+                <div class="progress" [ngClass]="{'active' : task.percent === 100 && task.status === 'Done'}">
+                    <app-progress-circle [cx]="15" [cy]="15" [r]="15" [percent] = "task.percent" [status]="task.status"></app-progress-circle>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #modal></ng-template>
