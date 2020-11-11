@@ -5,6 +5,7 @@ TaskManager helps you manage the task more easily (business logic, data, and con
 ## Tech stack
 - Angular
 - Material
+- Scss
 - Rxjs
 - Nodejs
 - Mongodb
